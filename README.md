@@ -4,8 +4,7 @@ Nadir Ramil; DNI 40374270; Email: nadiramil92@gmail.com; Sede: Tandil
 
 # Project Topic
 
-Libreria
-
+Esta página, desarrollada con Angular, permite simular la compra de libros. Los usuarios pueden seleccionar los títulos deseados y la cantidad de ejemplares que quieren adquirir. Al confirmar su compra, los libros seleccionados se añaden a su lista de 'Mis libros'.
 # Libreria
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
