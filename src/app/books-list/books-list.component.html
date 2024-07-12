@@ -1,0 +1,29 @@
+<h5 class="mt-3 mb-3 text-center">Lista de libros</h5>
+
+<table class="table rounded ml-5  p-2 text-dark bg -opacity-10 - text-center">
+    <thead class="table-light">
+        <tr>
+            <th scope="col">Imagen</th>
+            <th scope="col">Titulo</th>
+            <th scope="col">Autor</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Compra</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        <tr *ngFor="let book of books" [ngClass]="{offer:book.offer}"> 
+            <td> <img width="100" [src]="book.image" [alt]="book.titulo"/></td>
+            <td>{{book.titulo}}</td>
+            <td>{{book.autor}}</td>
+            <td><span class="badge text-bg-dark" *ngIf="book.stock==0">SIN STOCK</span></td>
+            <td>{{book.precio | currency: "USD"}}</td>
+            <td>
+                <app-input-number [(quantity)]="book.quantity" [max]="book.stock"*ngIf="book.stock"  (maxReached)="maxReached($event)"></app-input-number>
+                <button class="btn btn-secondary" (click)="addToCart(book)">Comprar</button>
+            </td>
+           
+        </tr>
+        
+    </tbody>
+</table>

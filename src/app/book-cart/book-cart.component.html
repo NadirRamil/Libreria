@@ -1,0 +1,33 @@
+<h5 class="mt-3 mb-3 text-center">Carrito</h5>
+<div class="container">
+    <div class="row">
+        <table class="table-secondary  table-striped">
+            <thead class="table-secondary text-center">
+                <tr>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Titulo</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col"> Precio</th>
+                </tr>
+            </thead>
+            <tbody class="table-light text-center" *ngFor="let book of cartList ">
+                <tr>
+                    <td> <img [src]="book.image" [alt]="book.titulo" width="100"></td>
+                    <td>{{book.titulo}}</td>
+                    <td>{{book.quantity}}</td>
+                    <td>{{book.precio| currency: "USD"}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="alert alert-dark text-end" role="alert">El total de su compra es:
+            <h2 class="badge bg-secondary">{{ total() | currency}}</h2>
+        </div>
+
+        <div class="text-end">
+            <button>Comprar</button>
+        </div>
+        
+      
+    </div>
+</div>
